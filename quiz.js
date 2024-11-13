@@ -13,10 +13,9 @@ const app = {
   },
 
   subjects: [
-    { id: 'Sheet1', name: 'English', icon: 'calculator', color: 'from-blue-500 to-cyan-500' },
+   
     { id: 'Sheet2', name: 'Rivers And Lakes', icon: 'code', color: 'from-purple-500 to-pink-500' },
-    { id: 'Sheet3', name: 'Physics', icon: 'atom', color: 'from-orange-500 to-red-500' },
-    { id: 'Sheet4', name: 'General Knowledge', icon: 'globe', color: 'from-green-500 to-emerald-500' }
+    
   ],
 
   scriptURL: 'https://script.google.com/macros/s/AKfycbyRUf1Lgz_UuPPs8JlM133i7_zw6lvw_sFMpVh1xREbrRTQ22UVNtlntNjIgLh0lRvd/exec',
