@@ -15,6 +15,7 @@ const app = {
   subjects: [
    
     { id: 'Sheet2', name: 'Rivers And Lakes', icon: 'code', color: 'from-purple-500 to-pink-500' },
+    { id: 'Sheet3', name: 'Political & Physical divisions', icon: 'code', color: 'from-purple-500 to-pink-500' },
     
   ],
 
