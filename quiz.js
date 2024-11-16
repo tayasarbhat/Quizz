@@ -13,12 +13,15 @@ const app = {
   },
 
   subjects: [
-   
-    { id: 'Sheet2', name: 'Rivers And Lakes', icon: 'code', color: 'from-purple-500 to-pink-500' },
-    { id: 'Sheet3', name: 'Political & Physical divisions', icon: 'code', color: 'from-purple-500 to-pink-500' },
-    { id: 'Sheet4', name: 'Transport & Communication', icon: 'code', color: 'from-purple-500 to-pink-500' },
-    { id: 'Sheet1', name: 'Idioms And Phrases', icon: 'code', color: 'from-purple-500 to-pink-500' },
-    
+    { id: 'Sheet2', name: 'Rivers And Lakes', icon: 'droplet', color: 'from-blue-500 to-cyan-500' },
+    { id: 'Sheet3', name: 'Political & Physical Divisions', icon: 'map', color: 'from-green-500 to-emerald-500' },
+    { id: 'Sheet4', name: 'Transport & Communication', icon: 'send', color: 'from-purple-500 to-pink-500' },
+    { id: 'Sheet1', name: 'Idioms And Phrases', icon: 'message-circle', color: 'from-indigo-500 to-purple-500' },
+    // Additional subjects
+    { id: 'Sheet5', name: 'Articles', icon: 'english', color: 'from-red-500 to-orange-500' },
+    { id: 'Sheet6', name: 'Climate and Weather', icon: 'cloud-snow', color: 'from-teal-500 to-green-500' },
+    { id: 'Sheet7', name: 'Current Affairs', icon: 'book', color: 'from-yellow-500 to-orange-500' },
+    // You can add more subjects as needed
   ],
 
   scriptURL: 'https://script.google.com/macros/s/AKfycbyRUf1Lgz_UuPPs8JlM133i7_zw6lvw_sFMpVh1xREbrRTQ22UVNtlntNjIgLh0lRvd/exec',
@@ -89,7 +92,7 @@ const app = {
   renderSubjectSelection() {
     const container = document.getElementById('quiz-container');
     container.innerHTML = `
-      <div class="bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl p-8 text-center max-w-2xl mx-auto">
+      <div class="bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl p-8 text-center max-w-4xl mx-auto">
         <div class="w-24 h-24 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-8">
           <i data-lucide="book-open" class="w-12 h-12 text-white"></i>
         </div>
@@ -98,7 +101,7 @@ const app = {
         </h2>
         <p class="text-gray-600 mb-8 text-lg">Select a subject to begin the quiz</p>
         
-        <div class="grid grid-cols-1 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           ${this.subjects.map(subject => `
             <button
               onclick="app.selectSubject('${subject.id}')"
@@ -139,51 +142,51 @@ const app = {
     }
   },
 
-   renderLoader() {
-        const container = document.getElementById('quiz-container');
-        container.innerHTML = `
-          <div class="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-indigo-900/90 to-purple-900/90 backdrop-blur-lg">
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-8">
-                <div class="absolute inset-0 rounded-full border-4 border-indigo-500/20 animate-[spin_3s_linear_infinite]"></div>
-                <div class="absolute inset-0 rounded-full border-4 border-transparent border-t-purple-500 animate-[spin_2s_linear_infinite]"></div>
-                <div class="absolute inset-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 animate-pulse flex items-center justify-center">
-                  <span class="text-4xl font-bold text-white">1</span>
-                </div>
-              </div>
-              <div class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                Loading Questions...
-              </div>
-              <div class="mt-4 w-64 h-2 mx-auto bg-gray-700/30 rounded-full overflow-hidden">
-                <div class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full animate-loading"></div>
-              </div>
+  renderLoader() {
+    const container = document.getElementById('quiz-container');
+    container.innerHTML = `
+      <div class="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-indigo-900/90 to-purple-900/90 backdrop-blur-lg">
+        <div class="text-center">
+          <div class="relative w-48 h-48 mx-auto mb-8">
+            <div class="absolute inset-0 rounded-full border-4 border-indigo-500/20 animate-[spin_3s_linear_infinite]"></div>
+            <div class="absolute inset-0 rounded-full border-4 border-transparent border-t-purple-500 animate-[spin_2s_linear_infinite]"></div>
+            <div class="absolute inset-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 animate-pulse flex items-center justify-center">
+              <span class="text-4xl font-bold text-white">1</span>
             </div>
           </div>
-        `;
-      },
+          <div class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+            Loading Questions...
+          </div>
+          <div class="mt-4 w-64 h-2 mx-auto bg-gray-700/30 rounded-full overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full animate-loading"></div>
+          </div>
+        </div>
+      </div>
+    `;
+  },
       
-        renderLoader2() {
-        const container = document.getElementById('quiz-container');
-        container.innerHTML = `
-          <div class="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-indigo-900/90 to-purple-900/90 backdrop-blur-lg">
-            <div class="text-center">
-              <div class="relative w-48 h-48 mx-auto mb-8">
-                <div class="absolute inset-0 rounded-full border-4 border-indigo-500/20 animate-[spin_3s_linear_infinite]"></div>
-                <div class="absolute inset-0 rounded-full border-4 border-transparent border-t-purple-500 animate-[spin_2s_linear_infinite]"></div>
-                <div class="absolute inset-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 animate-pulse flex items-center justify-center">
-                  <span class="text-4xl font-bold text-white">1</span>
-                </div>
-              </div>
-              <div class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                Submitting Answers...
-              </div>
-              <div class="mt-4 w-64 h-2 mx-auto bg-gray-700/30 rounded-full overflow-hidden">
-                <div class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full animate-loading"></div>
-              </div>
+  renderLoader2() {
+    const container = document.getElementById('quiz-container');
+    container.innerHTML = `
+      <div class="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-indigo-900/90 to-purple-900/90 backdrop-blur-lg">
+        <div class="text-center">
+          <div class="relative w-48 h-48 mx-auto mb-8">
+            <div class="absolute inset-0 rounded-full border-4 border-indigo-500/20 animate-[spin_3s_linear_infinite]"></div>
+            <div class="absolute inset-0 rounded-full border-4 border-transparent border-t-purple-500 animate-[spin_2s_linear_infinite]"></div>
+            <div class="absolute inset-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 animate-pulse flex items-center justify-center">
+              <span class="text-4xl font-bold text-white">1</span>
             </div>
           </div>
-        `;
-      },
+          <div class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+            Submitting Answers...
+          </div>
+          <div class="mt-4 w-64 h-2 mx-auto bg-gray-700/30 rounded-full overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full animate-loading"></div>
+          </div>
+        </div>
+      </div>
+    `;
+  },
 
   startQuiz() {
     this.state.quizStarted = true;
