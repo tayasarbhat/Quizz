@@ -18,9 +18,9 @@ const app = {
     { id: 'Sheet4', name: 'Transport & Communication', icon: 'send', color: 'from-purple-500 to-pink-500' },
     { id: 'Sheet1', name: 'Idioms And Phrases', icon: 'message-circle', color: 'from-indigo-500 to-purple-500' },
     // Additional subjects
-    { id: 'Sheet5', name: 'Articles', icon: 'english', color: 'from-red-500 to-orange-500' },
+    { id: 'Sheet5', name: 'Mountains and Plateaus', icon: 'mountain', color: 'from-red-500 to-orange-500' },
     { id: 'Sheet6', name: 'Climate and Weather', icon: 'cloud-snow', color: 'from-teal-500 to-green-500' },
-    { id: 'Sheet7', name: 'Current Affairs', icon: 'book', color: 'from-yellow-500 to-orange-500' },
+    { id: 'Sheet7', name: 'Historical Events', icon: 'book', color: 'from-yellow-500 to-orange-500' },
     // You can add more subjects as needed
   ],
 
@@ -109,7 +109,7 @@ const app = {
             >
               <div class="absolute inset-0 bg-gradient-to-r ${subject.color} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300"></div>
               <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 rounded-full bg-gradient-to-r ${subject.color} flex items-center justify-center">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r ${subject.color} flex items-center justify-center">
                   <i data-lucide="${subject.icon}" class="w-6 h-6 text-white"></i>
                 </div>
                 <span class="text-xl font-medium text-gray-800">${subject.name}</span>
@@ -567,7 +567,16 @@ const app = {
   },
 
   goHome() {
-    this.restartQuiz();
+    clearInterval(this.timer); // Stop the timer if it's running
+    this.state.selectedSubject = '';
+    this.state.currentQuestion = 0;
+    this.state.questions = [];
+    this.state.answers = [];
+    this.state.quizStarted = false;
+    this.state.quizCompleted = false;
+    this.state.timeLeft = 0;
+    this.state.isLoading = false;
+    this.renderSubjectSelection();
   },
 
   restartQuiz() {
@@ -587,3 +596,5 @@ const app = {
     this.init();
   }
 };
+
+app.init();
