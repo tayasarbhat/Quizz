@@ -580,20 +580,17 @@ const app = {
   },
 
   restartQuiz() {
-    clearInterval(this.timer);
-    this.state = {
-      playerName: '',
-      selectedSubject: '',
-      currentQuestion: 0,
-      questions: [],
-      answers: [],
-      quizStarted: false,
-      quizCompleted: false,
-      timeLeft: 0,
-      timer: null,
-      isLoading: false
-    };
-    this.init();
+    clearInterval(this.timer); // Stop the timer if it's running
+    this.state.selectedSubject = '';
+    this.state.currentQuestion = 0;
+    this.state.questions = [];
+    this.state.answers = [];
+    this.state.quizStarted = false;
+    this.state.quizCompleted = false;
+    this.state.timeLeft = 0;
+    this.state.isLoading = false;
+    this.renderSubjectSelection();
+
   }
 };
 
