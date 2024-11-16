@@ -18,7 +18,7 @@ const app = {
     { id: 'Sheet4', name: 'Transport & Communication', icon: 'send', color: 'from-purple-500 to-pink-500' },
     { id: 'Sheet1', name: 'Idioms And Phrases', icon: 'message-circle', color: 'from-indigo-500 to-purple-500' },
     // Additional subjects
-    { id: 'Sheet5', name: 'Mountains and Plateaus', icon: 'mountain', color: 'from-red-500 to-orange-500' },
+    { id: 'Sheet5', name: 'Indian freedom struggle', icon: 'mountain', color: 'from-red-500 to-orange-500' },
     { id: 'Sheet6', name: 'Climate and Weather', icon: 'cloud-snow', color: 'from-teal-500 to-green-500' },
     { id: 'Sheet7', name: 'Historical Events', icon: 'book', color: 'from-yellow-500 to-orange-500' },
     // You can add more subjects as needed
