@@ -19,7 +19,7 @@ const app = {
     { id: 'Sheet1', name: 'Idioms And Phrases', icon: 'message-circle', color: 'from-indigo-500 to-purple-500' },
     // Additional subjects
     { id: 'Sheet5', name: 'Freedom Struggle ', icon: 'mountain', color: 'from-red-500 to-orange-500' },
-    { id: 'Sheet6', name: 'Climate and Weather', icon: 'cloud-snow', color: 'from-teal-500 to-green-500' },
+    { id: 'Sheet6', name: 'Indian personalities', icon: 'cloud-snow', color: 'from-teal-500 to-green-500' },
     { id: 'Sheet7', name: 'Historical Events', icon: 'book', color: 'from-yellow-500 to-orange-500' },
     // You can add more subjects as needed
   ],
